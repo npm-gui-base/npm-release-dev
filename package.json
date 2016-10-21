@@ -1,0 +1,39 @@
+{
+  "name": "npm-gui",
+  "version": "0.3.2",
+  "description": "Graphic User Interface for NPM packages/tasks for front and back -end users.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bin/npm-gui",
+    "test": "node node_modules/mocha/bin/mocha ./lib/modules/**/*.js ./lib/helpers/**/*.js && node node_modules/mocha/bin/mocha responses.test.js",
+    "buildd": "node node_modules/webpack/bin/webpack.js -p --config webpack.client.config.js && node node_modules/webpack/bin/webpack.js -p --config webpack.server.config.js",
+    "dev": "node bin/_npm-gui 0.0.0.0:9001 & node node_modules/webpack/bin/webpack.js --progress --colors --watch --config webpack.client.config.js",
+    "app": "node bin/npm-gui-app",
+    "postinstall": "install-app-deps",
+    "pack": "build --target dir",
+    "dist": "build",
+    "test-web-client": "node node_modules/karma/bin/karma start",
+    "test-web-server": "node node_modules/mocha/bin/mocha ./web-server/**/*.test.js",
+    "test-web-server2": "node node_modules/mocha/bin/mocha ./web-server/service/project/*.test.js ./web-server/service/utils/*.test.js ./web-server/service/console/*.test.js ./web-server/service/dependencies/*.test.js"
+  },
+  "keywords": [
+    "gui",
+    "npm",
+    "view",
+    "client",
+    "task",
+    "runner",
+    "dependencies",
+    "installer",
+    "console"
+  ],
+  "author": "Paweł Stefański",
+  "license": "MIT",
+  "devDependencies": {
+    "npm-gui-base-web-client": "",
+    "npm-gui-base-web-server": ""
+  },
+  "bin": "bin/npm-gui",
+  "dependencies": {
+  }
+}
